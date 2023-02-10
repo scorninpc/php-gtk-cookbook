@@ -18,7 +18,7 @@ $vbox->pack_start($label, TRUE, TRUE, 0);
 
 // create the label and add to the box
 $label = new \GtkLabel("box area 3");
-$vbox->pack_start($label, TRUE, TRUE, 0);
+$vbox->pack_start($label, FALSE, FALSE, 0);
 
 // add label to window
 $window->add($vbox);
