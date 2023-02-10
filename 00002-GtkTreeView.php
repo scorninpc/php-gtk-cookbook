@@ -12,15 +12,12 @@ $scroll->add($treeview);
 
 	// columns
 	$column1 = new GtkTreeViewColumn("Name", new GtkCellRendererText(), "text", 0);
-	$column1->set_sort_column_id(0);
 	$treeview->append_column($column1);
 
 	$column2 = new GtkTreeViewColumn("Phone", new GtkCellRendererText(), "text", 1);
-	$column2->set_sort_column_id(1);
 	$treeview->append_column($column2);
 
 	$column3 = new GtkTreeViewColumn("Genre", new GtkCellRendererText(), "text", 2);
-	$column3->set_sort_column_id(2);
 	$treeview->append_column($column3);
 
 // create model
