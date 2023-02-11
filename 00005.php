@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * PHP-GTK Cookbook
+ * 
+ * https://andor.com.br/php-gtk/cook/how-to-align-text-inside-gtkbutton
+ */
+
 Gtk::init();
 
 $window = new \GtkWindow();

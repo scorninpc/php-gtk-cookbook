@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * PHP-GTK Cookbook
+ * 
+ * https://andor.com.br/php-gtk/cook/how-to-center-multiline-text-in-gtklabel
+ */
+
 Gtk::init();
 
 $window = new \GtkWindow();

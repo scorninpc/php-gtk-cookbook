@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * PHP-GTK Cookbook
+ * 
+ * https://andor.com.br/php-gtk/cook/how-to-use-gtkbox-to-create-boxed-layouts
+ */
+
 Gtk::init();
 
 $window = new \GtkWindow();
