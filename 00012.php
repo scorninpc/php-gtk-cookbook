@@ -19,7 +19,7 @@ $label->set_use_markup(TRUE);
 // $label2 = new \GtkLabel();
 $label2->set_markup("<u>underline</u> <i>italic</i> <b>bold</b> <span size=\"xx-large\" foreground=\"blue\">xx-large</span> <span size=\"small\" foreground=\"#00ff00\">small</span>");
 
-// add button to window
+// add label2 to window
 $window->add($label2);
 
 $window->show_all();
