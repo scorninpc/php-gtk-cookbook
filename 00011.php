@@ -3,7 +3,7 @@
 /**
  * PHP-GTK Cookbook
  * 
- * https://andor.com.br/php-gtk/cook/how-to-use-gtktable-to-list-values
+ * https://andor.com.br/php-gtk/cook/how-to-style-gtkbutton-with-css
  */
 
 Gtk::init();
