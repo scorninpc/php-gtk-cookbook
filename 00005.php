@@ -32,7 +32,7 @@ $treeview->set_model($model);
  
 	// add values the root
 	$iter = $model->append(NULL, ["Pessoal"]);
-	var_dump($iter);
+	
 		$model->append($iter, ["Bruno"]);
 		$model->append($iter, ["Natália"]);
 	
