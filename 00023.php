@@ -63,5 +63,3 @@ $window->connect("destroy", function() {
 // show all and start
 $window->show_all();
 Gtk::main();
-
-die();
