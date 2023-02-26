@@ -45,10 +45,10 @@ function cell_data($column, $renderer, $model, $iter)
 	$path = (int)$model->get_path($iter);
 
 	if($path % 2 == 0) {
-		$renderer->set_property('cell-background', "#cd9c41"); // set first background color
+		$renderer->set_property('cell-background', "#cd9c41"); // set even background color
 	}
 	else {
-		$renderer->set_property('cell-background', "#c54e48");  // set second background color
+		$renderer->set_property('cell-background', "#c54e48");  // set odd background color
 	}
 }
  
