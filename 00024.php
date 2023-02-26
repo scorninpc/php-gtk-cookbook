@@ -42,8 +42,14 @@ $vbox->pack_start($label, FALSE, FALSE, 0);
 $selection = $treeview->get_selection();
 $selection->connect("changed", function($selection) use ($label) {
 	list($model, $iter) = $selection->get_selected();
+
+	// verify if anything are selected
 	if($model) {
+		
+		// get the value
 		$name = $model->get_value($iter, 0);
+
+		// change label text
 		$label->set_text($name);
 	}
 });
