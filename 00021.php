@@ -25,15 +25,17 @@ $vbox->pack_start($scroll, TRUE, TRUE, 0);
 	$renderer = new GtkCellRendererText();
 	$column1 = new GtkTreeViewColumn("Name", $renderer, "text", 0);
 	$treeview->append_column($column1);
+
+	$column1->set_alignment(0.5);
  
 	$renderer = new GtkCellRendererText();
-	$renderer->set_property("xalign", 0.5);
 	$column2 = new GtkTreeViewColumn("Phone", $renderer, "text", 1);
 	$treeview->append_column($column2);
  
 	$renderer = new GtkCellRendererText();
-	$renderer->set_property("xalign", 1);
+		$renderer->set_property("xalign", 0.5); // set lines alignment
 	$column3 = new GtkTreeViewColumn("Genre", $renderer, "text", 2);
+		$column3->set_alignment(0.5); // set column alignment
 	$treeview->append_column($column3);
  
 // create model
