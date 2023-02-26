@@ -25,8 +25,6 @@ $vbox->pack_start($scroll, TRUE, TRUE, 0);
 	$renderer = new GtkCellRendererText();
 	$column1 = new GtkTreeViewColumn("Name", $renderer, "text", 0);
 	$treeview->append_column($column1);
-
-	$column1->set_alignment(0.5);
  
 	$renderer = new GtkCellRendererText();
 	$column2 = new GtkTreeViewColumn("Phone", $renderer, "text", 1);
