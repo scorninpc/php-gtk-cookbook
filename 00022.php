@@ -3,7 +3,7 @@
 /**
  * PHP-GTK Cookbook
  * 
- * https://andor.com.br/php-gtk/cook/how-to-set-color-on-gtktreeview-column-header-with-css
+ * https://andor.com.br/php-gtk/cook/how-to-highlight-lines-of-gtktreeview
  */
 Gtk::init();
 
@@ -24,19 +24,33 @@ $vbox->pack_start($scroll, TRUE, TRUE, 0);
 	// columns
 	$renderer = new GtkCellRendererText();
 	$column1 = new GtkTreeViewColumn("Name", $renderer, "text", 0);
-	$column1->get_button()->set_name("my_column1"); // add custom name to button inside column
+	$column1->set_cell_data_func($renderer, "cell_data"); // "cell_data" is the function name
 	$treeview->append_column($column1);
  
 	$renderer = new GtkCellRendererText();
 	$column2 = new GtkTreeViewColumn("Phone", $renderer, "text", 1);
-	$column2->get_button()->set_name("my_column2"); // add custom name to button inside column
+	$column2->set_cell_data_func($renderer, "cell_data"); // "cell_data" is the function name
 	$treeview->append_column($column2);
  
 	$renderer = new GtkCellRendererText();
 	$column3 = new GtkTreeViewColumn("Genre", $renderer, "text", 2);
-	$column3->get_button()->set_name("my_column3"); // add custom name to button inside column
+	$column3->set_cell_data_func($renderer, "cell_data"); // "cell_data" is the function name
 	$treeview->append_column($column3);
 
+// function to format rows
+function cell_data($column, $renderer, $model, $iter)
+{
+	$renderer->set_property('foreground', "#000000"); // set font color
+	
+	$path = (int)$model->get_path($iter);
+
+	if($path % 2 == 0) {
+		$renderer->set_property('cell-background', "#cd9c41"); // set even background color
+	}
+	else {
+		$renderer->set_property('cell-background', "#c54e48");  // set odd background color
+	}
+}
  
 // create model
 $model = new GtkListStore(GObject::TYPE_STRING, GObject::TYPE_STRING, GObject::TYPE_STRING);
@@ -48,32 +62,8 @@ $treeview->set_model($model);
 	$model->append(["Maria", "+49 4190-8140", "F"]);
 	$model->append(["Sven", "+49 0291-2450", "M"]);
 
-
 // add to window
 $window->add($vbox);
-
-// create and add CSS
-$css_provider = new GtkCssProvider();
-$css_provider->load_from_data("
-	#my_column1 {
-		background: #1a87ce;
-		border: none;
-		color: #000;
-	}
-	#my_column2 {
-		background: #cd9c41;
-		border: none;
-		color: #000;
-	}
-	#my_column3 {
-		background: #c54e48;
-		border: none;
-		color: #000;
-	}
-");
- 
-$style_context = new GtkStyleContext();
-$style_context->add_provider_for_screen($css_provider, 600);
 
 // connect to signal that close program
 $window->connect("destroy", function() {
