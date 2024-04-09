@@ -56,7 +56,7 @@ $vbox->pack_start($entry, FALSE, FALSE, 10);
 // create a label and entry
 $button = GtkButton::new_with_label("Save");
 $button->connect("clicked", "onSave"); // connect to function onSave
-$vbox->pack_start($button, FALSE, FALSE, 0);;
+$vbox->pack_start($button, FALSE, FALSE, 0);
 
 // function to save
 function onSave($button)
