@@ -7,7 +7,6 @@
 	 */
 	Gtk::init();
 
-
 	$window = new GtkWindow();
 	$window->set_size_request(500, 500);
 	$window->set_title("PHP-GTK");
